@@ -1,0 +1,12 @@
+<div class="widget widget-archives">
+  <h3 class="widget-title">归档</h3>
+  <ul>
+    {%for obj in date_list%}
+    <li>
+      <a href="{%url 'blog:archive' obj.date.year obj.date.month%}">{{obj.date.year}}年{{obj.date.month}}月 ({{obj.count}})</a>
+    </li>
+    {%empty%}
+      暂无内容
+    {%endfor%}
+  </ul>
+</div>
